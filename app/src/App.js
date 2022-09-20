@@ -1,10 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
 import React, {Component} from 'react';
+import ConditionalSection from './sections/conditional';
 //function Hello (props){
 
  // return <h3>{props.title}</h3>
 //}
+
+
+class Contador extends Component{
+
+constructor(props){
+  super(props)
+  this.state = {contador: this.props.contadorInicial}
+  setInterval(()=> {
+    this.setState({contador: this.state.contador+1})
+  },1000) 
+}
+
+render(){
+
+  return <ContadorNumero numero ={this.state.contador}/>
+}
+
+}
+
+Contador.defaultProps={
+  contadorInicial:0
+}
 
 class Hello extends Component{
 
@@ -13,6 +36,12 @@ render(){
 }
 }
 
+class ContadorNumero extends Component{
+  render(){
+    console.log('ContadorNumero render()')
+    return <span>{this.props.numero}</span>
+  }
+}
 class Text extends Component{
 
   render(){
@@ -60,6 +89,9 @@ function App() {
         >
           Learn React
         </a>
+        <ConditionalSection/>
+
+        <Contador contadorInicial={100}/>
         <Hello title="Hello from props2"/>
         <Text  
               text ='Texto en String' 
@@ -71,7 +103,7 @@ function App() {
               text2={<h1>hola</h1>}
         />
       </header>
-      
+     
     </div>
   );
 }
