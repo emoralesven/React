@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React, {Component} from 'react';
 import ConditionalSection from './sections/conditional';
+import cars from './data/cars.json'
 //function Hello (props){
 
  // return <h3>{props.title}</h3>
@@ -72,9 +73,24 @@ class Text extends Component{
   }
   }
 
+class CarItem extends Component{
+render(){
+  const{car} = this.props
 
-function App() {
+  return <li>
+               <p><strong>Nombre:</strong>{car.name}</p>
+               <p><strong>Marca:</strong>{car.name}</p>
+          </li>
+}
+
+
+}
+function App(){
+
+  const numbers = [1,1,3,4,5]
+ 
   return (
+    
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -89,8 +105,24 @@ function App() {
         >
           Learn React
         </a>
-        <ConditionalSection/>
+        <div> 
+          <h3> Trabajando con listas con objetos</h3>
+        <ul>
+            {cars.map(car => {
+return <CarItem  key = {car.id} car= {car}/>
 
+            })}
+
+        </ul>
+           </div>
+        {numbers.map(number=>
+          {
+            return <p key ={number}>Soy el numero {number}</p>
+
+          })}
+        
+        
+        <ConditionalSection/>
         <Contador contadorInicial={100}/>
         <Hello title="Hello from props2"/>
         <Text  

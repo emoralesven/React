@@ -14,14 +14,14 @@ class LogginButton extends Component {
         </div>
   }
 }
-
+/*
 function ConditionalRendering(mostrarA){
     if(mostrarA){
 return <LogginButton/>
     }
     return <LogoutButton/>
 }
-   
+   */
   export default class ConditionalSection extends Component {
     constructor(){
         super()
