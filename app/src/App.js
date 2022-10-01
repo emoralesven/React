@@ -39,7 +39,7 @@ render(){
 
 class ContadorNumero extends Component{
   render(){
-    console.log('ContadorNumero render()')
+   // console.log('ContadorNumero render()')
     return <span>{this.props.numero}</span>
   }
 }
@@ -85,7 +85,7 @@ render(){
 
 
 }
-function App(){
+export function App(){
 
   const numbers = [1,1,3,4,5]
  
@@ -140,4 +140,3 @@ return <CarItem  key = {car.id} car= {car}/>
   );
 }
 
-export default App;
