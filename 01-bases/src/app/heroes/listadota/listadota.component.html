@@ -1,0 +1,19 @@
+<p>listadota works!</p>
+
+<ul>
+    <li *ngFor="let item of heroes; let i = index">{{i}} - {{item}}</li>
+
+
+</ul>
+
+<div *ngIf="lastHero !==''; else noBorrado">
+    <h3>Heroe borrardo</h3>
+    <p>{{lastHero}}</p>
+</div>
+
+<ng-template #noBorrado>
+    <h3>No ha borrado nada</h3>
+    
+</ng-template>
+
+<button (click)="borrarHeroe()"> borrar heroe</button>

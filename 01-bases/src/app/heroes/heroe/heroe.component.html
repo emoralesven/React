@@ -1,0 +1,20 @@
+<h1>{{nombre}}</h1>
+
+<dl>
+    <td>Nombre: </td>
+    <td>{{nombre}}: </td>
+
+    <td>Edad: </td>
+    <td>{{edad}}: </td>
+
+    <td>Funcion: </td>
+    <td>{{obtenerNombre()}}: </td>
+
+    <td>Capitalizado: </td>
+    <td>{{obtenerNombre().toUpperCase()}}: </td>
+    <td>Capitalizado por funcion: </td>
+    <td>{{nombreCapitalizado}}: </td>
+    
+</dl>
+
+<button (click)="cambiarNombre()"> cammbiar nombre</button>
